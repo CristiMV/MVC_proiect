@@ -1,23 +1,21 @@
 ﻿<Properties StartupConfiguration="{3F63FA97-F7B4-467C-9F26-110E4E418E4B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MersTrenuri/Views/Home/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MersTrenuri/Content/Site.css">
     <Files>
-      <File FileName="MersTrenuri/Views/Shared/_Layout.cshtml" Line="17" Column="50" />
+      <File FileName="MersTrenuri/Views/Shared/_Layout.cshtml" Line="62" Column="22" />
       <File FileName="MersTrenuri/Controllers/HomeController.cs" Line="30" Column="36" />
       <File FileName="MersTrenuri/Controllers/TrenController.cs" Line="1" Column="1" />
-      <File FileName="MersTrenuri/Views/Home/Login.cshtml" Line="45" Column="40" />
-      <File FileName="MersTrenuri/Views/Home/Index.cshtml" Line="157" Column="7" />
+      <File FileName="MersTrenuri/Views/Home/Login.cshtml" Line="4" Column="34" />
+      <File FileName="MersTrenuri/Views/Home/Index.cshtml" Line="97" Column="144" />
+      <File FileName="MersTrenuri/Scripts/bootstrap.js" Line="1" Column="1" />
+      <File FileName="MersTrenuri/Content/Site.css" Line="17777" Column="49" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MersTrenuri" expanded="True">
             <Node name="MersTrenuri" expanded="True">
-              <Node name="Scripts" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
-                <Node name="Shared" expanded="True" />
+              <Node name="Content" expanded="True">
+                <Node name="Site.css" selected="True" />
               </Node>
               <Node name="Global.asax" expanded="True" />
               <Node name="Web.config" expanded="True" />
