@@ -1,0 +1,41 @@
+Rezervare(id, nume, nr_telefon, email, data)
+	 | 
+	/|\
+
+
+
+Ruta / Tren (id / numar, rangTren,  nrLocuri / nrRezervMax  'operator / proprietar')
+	 |
+	/|\
+
+
+Statie pe ruta (idTren, idGara , oraS, oraP) //Tren-Gara
+
+
+	\|/
+	 |
+Gara (id, nume)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	\|/
+	 |
+Oras(id, nume)
