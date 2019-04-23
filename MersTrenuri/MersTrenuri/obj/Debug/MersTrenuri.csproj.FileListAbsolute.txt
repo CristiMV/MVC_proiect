@@ -164,3 +164,4 @@ C:\Users\User\Documents\GitHub\MVC_proiect\MersTrenuri\MersTrenuri\bin\roslyn\vb
 C:\Users\User\Documents\GitHub\MVC_proiect\MersTrenuri\MersTrenuri\bin\roslyn\vbc.exe.config
 C:\Users\User\Documents\GitHub\MVC_proiect\MersTrenuri\MersTrenuri\bin\roslyn\vbc.rsp
 C:\Users\User\Documents\GitHub\MVC_proiect\MersTrenuri\MersTrenuri\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\User\Documents\GitHub\MVC_proiect\MersTrenuri\MersTrenuri\obj\Debug\MersTrenuri.csprojAssemblyReference.cache
