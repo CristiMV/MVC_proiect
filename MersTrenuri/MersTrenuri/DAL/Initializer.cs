@@ -13,40 +13,41 @@ namespace MersTrenuri.DAL
     {
         protected override void Seed(Context context)
         {
-            /*
+            
             var trenuri = new List<Tren>{
                 new Tren{ID=1, Rang="IR"},
+                new Tren{ID=2, Rang="R"}
             };
             trenuri.ForEach(s => context.Trenuri.Add(s));
             context.SaveChanges();
-
+            
             var gari = new List<Gara> {
-                new Gara{ ID=0, Nume= "Pitesti"},
-                new Gara{ ID=1, Nume= "Pitesti Nord"},
-                new Gara{ ID=2, Nume= "Bucuresti Nord"},
-                new Gara{ ID=3, Nume= "Bucuresti Basarab"},
+                new Gara{ ID=1, Nume= "Pitesti"},
+                new Gara{ ID=2, Nume= "Pitesti Nord"},
+                //new Gara{ ID=3, Nume= "Bucuresti Nord"},
+                //new Gara{ ID=4, Nume= "Bucuresti Basarab"},
             };
             gari.ForEach(s => context.Gari.Add(s));
             context.SaveChanges();
-
+           
             var statiiRuta = new List<StatieRuta> {
-               new StatieRuta{ TrenID = 1, GaraID = 1050, OraSosire= "", OraPlecare="" },
+               new StatieRuta{ TrenID = 1, GaraID = 1, OraSosire= DateTime.Parse("7:50"), OraPlecare= DateTime.Parse("8:00") },
+               new StatieRuta{ TrenID = 2, GaraID = 2, OraSosire= DateTime.Parse("8:50"), OraPlecare= DateTime.Parse("9:00") },
            };
             statiiRuta.ForEach(s => context.StatiiRuta.Add(s));
             context.SaveChanges();
-            */
+            /**/
         }
     }
 }
 
 /*
 using System;
-using System.Collections.Generic;
 
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
-using ContosoUniversity.Models;
+
 */
 /*
 namespace ContosoUniversity.DAL
@@ -59,10 +60,10 @@ namespace ContosoUniversity.DAL
 new Student{FirstMidName="Yan",LastName="Li",EnrollmentDate=DateTime.Parse("2002-09-01")},new Student{FirstMidName="Peggy",LastName="Justice",EnrollmentDate=DateTime.Parse("2001-09-01")},new Student{FirstMidName="Laura",LastName="Norman",EnrollmentDate=DateTime.Parse("2003-09-01")},new Student{FirstMidName="Nino",LastName="Olivetto",EnrollmentDate=DateTime.Parse("2005-09-01")}};
  students.ForEach(s => context.Students.Add(s));
  context.SaveChanges();
- var courses = new List<Course> { new Course { CourseID = 1050, Title = "Chemistry", Credits = 3, }, new Course { CourseID = 4022, Title = "Microeconomics", Credits = 3, }, new Course { CourseID = 4041, Title = "Macroeconomics", Credits = 3, }, new Course { CourseID = 1045, Title = "Calculus", Credits = 4, }, new Course { CourseID = 3141, Title = "Trigonometry", Credits = 4, }, new Course { CourseID = 2021, Title = "Composition", Credits = 3, }, new Course { CourseID = 2042, Title = "Literature", Credits = 4, } };
+    var courses = new List<Course> { new Course { CourseID = 1050, Title = "Chemistry", Credits = 3, }, new Course { CourseID = 4022, Title = "Microeconomics", Credits = 3, }, new Course { CourseID = 4041, Title = "Macroeconomics", Credits = 3, }, new Course { CourseID = 1045, Title = "Calculus", Credits = 4, }, new Course { CourseID = 3141, Title = "Trigonometry", Credits = 4, }, new Course { CourseID = 2021, Title = "Composition", Credits = 3, }, new Course { CourseID = 2042, Title = "Literature", Credits = 4, } };
  courses.ForEach(s => context.Courses.Add(s));
  context.SaveChanges();
- var enrollments = new List<Enrollment> { new Enrollment { StudentID = 1, CourseID = 1050, Grade = Grade.A }, new Enrollment { StudentID = 1, CourseID = 4022, Grade = Grade.C }, new Enrollment { StudentID = 1, CourseID = 4041, Grade = Grade.B }, new Enrollment { StudentID = 2, CourseID = 1045, Grade = Grade.B }, new Enrollment { StudentID = 2, CourseID = 3141, Grade = Grade.F }, new Enrollment { StudentID = 2, CourseID = 2021, Grade = Grade.F }, new Enrollment { StudentID = 3, CourseID = 1050 }, new Enrollment { StudentID = 4, CourseID = 1050, }, new Enrollment { StudentID = 4, CourseID = 4022, Grade = Grade.F }, new Enrollment { StudentID = 5, CourseID = 4041, Grade = Grade.C }, new Enrollment { StudentID = 6, CourseID = 1045 }, new Enrollment { StudentID = 7, CourseID = 3141, Grade = Grade.A }, };
+    var enrollments = new List<Enrollment> { new Enrollment { StudentID = 1, CourseID = 1050, Grade = Grade.A }, new Enrollment { StudentID = 1, CourseID = 4022, Grade = Grade.C }, new Enrollment { StudentID = 1, CourseID = 4041, Grade = Grade.B }, new Enrollment { StudentID = 2, CourseID = 1045, Grade = Grade.B }, new Enrollment { StudentID = 2, CourseID = 3141, Grade = Grade.F }, new Enrollment { StudentID = 2, CourseID = 2021, Grade = Grade.F }, new Enrollment { StudentID = 3, CourseID = 1050 }, new Enrollment { StudentID = 4, CourseID = 1050, }, new Enrollment { StudentID = 4, CourseID = 4022, Grade = Grade.F }, new Enrollment { StudentID = 5, CourseID = 4041, Grade = Grade.C }, new Enrollment { StudentID = 6, CourseID = 1045 }, new Enrollment { StudentID = 7, CourseID = 3141, Grade = Grade.A }, };
  enrollments.ForEach(s => context.Enrollments.Add(s));
  context.SaveChanges();
 
