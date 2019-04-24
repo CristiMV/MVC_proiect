@@ -1,6 +1,6 @@
 Rezervare(id, nume, nr_telefon, email, data)
-	 | 
-	/|\
+	\|/
+	 |
 
 
 
