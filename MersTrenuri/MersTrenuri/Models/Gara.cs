@@ -6,11 +6,11 @@ namespace MersTrenuri.Models
 {
     public class Gara
     {
-        ////[DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
         public string Nume { get; set; }
 
-        public virtual ICollection<StatieRuta> StatiiRuta{ get; set; }
+        public virtual ICollection<StatieTren> StatiiTren{ get; set; }
     }
 }
 

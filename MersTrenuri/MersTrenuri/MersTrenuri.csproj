@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3F63FA97-F7B4-467C-9F26-110E4E418E4B}</ProjectGuid>
+    <ProjectGuid>{EA74D99F-2C83-4BD4-B34E-975FE18AB87C}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -118,12 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Diagnostics.DiagnosticSource">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
-      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -132,7 +126,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GaraController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StatieTrenController.cs" />
     <Compile Include="Controllers\TrenController.cs" />
     <Compile Include="DAL\Context.cs" />
     <Compile Include="DAL\Initializer.cs" />
@@ -140,10 +136,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Gara.cs" />
-    <Compile Include="Models\StatieRuta.cs" />
+    <Compile Include="Models\StatieTren.cs" />
     <Compile Include="Models\Tren.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Home\EmptyClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -188,9 +183,16 @@
     <Content Include="Views\Tren\Details.cshtml" />
     <Content Include="Views\Tren\Edit.cshtml" />
     <Content Include="Views\Tren\Index.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Scripts\Contact.cshtml" />
-    <Content Include="Content\Contact.cshtml" />
+    <Content Include="Views\Gara\Create.cshtml" />
+    <Content Include="Views\Gara\Delete.cshtml" />
+    <Content Include="Views\Gara\Details.cshtml" />
+    <Content Include="Views\Gara\Edit.cshtml" />
+    <Content Include="Views\Gara\Index.cshtml" />
+    <Content Include="Views\StatieTren\Create.cshtml" />
+    <Content Include="Views\StatieTren\Delete.cshtml" />
+    <Content Include="Views\StatieTren\Details.cshtml" />
+    <Content Include="Views\StatieTren\Edit.cshtml" />
+    <Content Include="Views\StatieTren\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -224,9 +226,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51598</DevelopmentServerPort>
+          <DevelopmentServerPort>50162</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51598/</IISUrl>
+          <IISUrl>http://localhost:50162/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -235,11 +237,6 @@
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
-    <MonoDevelop>
-      <Properties>
-        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
-      </Properties>
-    </MonoDevelop>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

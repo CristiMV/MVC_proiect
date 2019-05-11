@@ -11,116 +11,115 @@ using MersTrenuri.Models;
 
 namespace MersTrenuri.Controllers
 {
-    public class TrenController : Controller
+    public class GaraController : Controller
     {
         private Context db = new Context();
 
-        // GET: Tren
+        // GET: Gara
         public ActionResult Index()
         {
-            return View(db.Trenuri.ToList());
+            return View(db.Gari.ToList());
         }
 
-        // GET: Tren/Details/5
+        // GET: Gara/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tren tren = db.Trenuri.Find(id);
-            if (tren == null)
+            Gara gara = db.Gari.Find(id);
+            if (gara == null)
             {
                 return HttpNotFound();
             }
-            return View(tren);
+            return View(gara);
         }
 
-        // GET: Tren/Create
+        // GET: Gara/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Tren/Create
+        // POST: Gara/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Rang")] Tren tren)
-        //public ActionResult Create([Bind(Include = "Rang")] Tren tren)
+        //public ActionResult Create([Bind(Include = "ID,Nume")] Gara gara)
+        public ActionResult Create([Bind(Include = "Nume")] Gara gara)
         {
-            try
-            {
-                if (ModelState.IsValid)
+            //try
+            //{
+            if (ModelState.IsValid)
                 {
-                    db.Trenuri.Add(tren);
+                    db.Gari.Add(gara);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
-            }
-            catch (DataException /* dex */)
-            {
-                //Log the error (uncomment dex variable name and add a line here to write a log.
-                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
-            }
-
-            return View(tren);
+            //}
+            //catch (DataException /* dex */)
+            //{
+            //    //Log the error (uncomment dex variable name and add a line here to write a log.
+            //    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+            //}
+            return View(gara);
         }
 
-        // GET: Tren/Edit/5
+        // GET: Gara/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tren tren = db.Trenuri.Find(id);
-            if (tren == null)
+            Gara gara = db.Gari.Find(id);
+            if (gara == null)
             {
                 return HttpNotFound();
             }
-            return View(tren);
+            return View(gara);
         }
 
-        // POST: Tren/Edit/5
+        // POST: Gara/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Rang")] Tren tren)
+        public ActionResult Edit([Bind(Include = "ID,Nume")] Gara gara)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tren).State = EntityState.Modified;
+                db.Entry(gara).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(tren);
+            return View(gara);
         }
 
-        // GET: Tren/Delete/5
+        // GET: Gara/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tren tren = db.Trenuri.Find(id);
-            if (tren == null)
+            Gara gara = db.Gari.Find(id);
+            if (gara == null)
             {
                 return HttpNotFound();
             }
-            return View(tren);
+            return View(gara);
         }
 
-        // POST: Tren/Delete/5
+        // POST: Gara/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Tren tren = db.Trenuri.Find(id);
-            db.Trenuri.Remove(tren);
+            Gara gara = db.Gari.Find(id);
+            db.Gari.Remove(gara);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

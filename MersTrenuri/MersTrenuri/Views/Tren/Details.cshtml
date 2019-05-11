@@ -18,6 +18,48 @@
             @Html.DisplayFor(model => model.Rang)
         </dd>
 
+
+        @**@@**@@**@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+
+        @**@@**@@**@
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatiiTren)
+        </dt>
+
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Gara</th>
+                    <th>Ora Sosire</th>
+                    <th>Ora Plecare</th>
+                </tr>
+                @foreach (var item in Model.StatiiTren)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gara.Nume)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OraSosire)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OraPlecare)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+
     </dl>
 </div>
 <p>

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.539
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MersTrenuri", "MersTrenuri\MersTrenuri.csproj", "{3F63FA97-F7B4-467C-9F26-110E4E418E4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MersTrenuri", "MersTrenuri\MersTrenuri.csproj", "{EA74D99F-2C83-4BD4-B34E-975FE18AB87C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3F63FA97-F7B4-467C-9F26-110E4E418E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F63FA97-F7B4-467C-9F26-110E4E418E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F63FA97-F7B4-467C-9F26-110E4E418E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F63FA97-F7B4-467C-9F26-110E4E418E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA74D99F-2C83-4BD4-B34E-975FE18AB87C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA74D99F-2C83-4BD4-B34E-975FE18AB87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA74D99F-2C83-4BD4-B34E-975FE18AB87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA74D99F-2C83-4BD4-B34E-975FE18AB87C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6D3FA02A-4E7A-4286-8373-7CB2E67C3C09}
+		SolutionGuid = {E20CFE71-B853-466C-9C34-CBFBC5EAABCE}
 	EndGlobalSection
 EndGlobal
