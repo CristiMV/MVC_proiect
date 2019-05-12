@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container align-items-center index-page" style="padding-top:20vh;">
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <h1 class="profile-title text-left">Lista trenurilor</h1>
+            <p class="profile-description">Aici aveti lista tuturor trenurilor.</p>
+
+        </div>
+        <div class="col-lg-12 col-md-6 ml-auto mr-auto mt-5">
+            <div class="card card-coin card-plain text-left">
+
+                <div class="card-body">
+                    <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active show" data-toggle="tab" href="#linka">
+                                Rute
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#linkb">
+                                Rezerva tichet
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#linkc">
+                                Informatii utile
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content tab-subcategories">
+                        <div class="tab-pane  active show" id="linka">
+                            <div class="table-responsive">
+                                <table class="table tablesorter " id="plain-table">
+                                    <thead class=" text-primary">
+                                        <tr>
+                                            <th class="header">
+                                                Ruta
+                                            </th>
+                                            <th class="header">
+                                                Numar
+                                            </th>
+                                            <th class="header">
+                                                Ora plecare
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Bucuresti-Buzau
+                                            </td>
+                                            <td>
+                                                R1243
+                                            </td>
+                                            <td>
+                                                17:20
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Bucuresti-Ploiesti
+                                            </td>
+                                            <td>
+                                                R3431
+                                            </td>
+                                            <td>
+                                                14:10
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Bucuresti-Craiova
+                                            </td>
+                                            <td>
+                                                IR421
+                                            </td>
+                                            <td>
+                                                18:45
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="linkb">
+                            <div class="row">
+                                <label class="col-sm-3 col-form-label">Adauga ruta</label>
+                                <div class="col-sm-9">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Bucuresti-Buzau">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-simple btn-primary btn-icon btn-round float-right"><i class="fa fa-paper-plane"></i></button>
+                        </div>
+                        <div class="tab-pane" id="linkc">
+                            <div class="table-responsive">
+                                <table class="table tablesorter " id="plain-table">
+                                    <thead class=" text-primary">
+                                        <tr>
+                                            <th class="header">
+                                                Ultimele noutati
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Trenul IR543 cu ruta Bucuresti-Ploiesti va avea o intarziere de 12 minute
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Biletele Bucuresti-Constanta la reducere de 50% pentru studienti in perioada 10.04.2019-26.04.2019
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Stocul biletelor cu destinatia Vienia este momentan indisponibil din orice statie
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

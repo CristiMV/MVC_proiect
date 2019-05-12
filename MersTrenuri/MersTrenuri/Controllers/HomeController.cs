@@ -26,5 +26,12 @@ namespace MersTrenuri.Controllers
 
             return View();
         }
+
+        public ActionResult Login()
+        {
+            ViewBag.Message = "Your login page.";
+
+            return View();
+        }
     }
 }
