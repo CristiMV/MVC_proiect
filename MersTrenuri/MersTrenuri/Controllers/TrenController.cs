@@ -20,6 +20,7 @@ namespace MersTrenuri.Controllers
         {
             return View(db.Trenuri.ToList());
         }
+        //// public ActionResult Index(string sortOrder)    //Add column sort links/Add sorting functionality to the Index method pg 56-57
 
         // GET: Tren/Details/5
         public ActionResult Details(int? id)
@@ -101,11 +102,16 @@ namespace MersTrenuri.Controllers
 
         // GET: Tren/Delete/5
         public ActionResult Delete(int? id)
+        //public ActionResult Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            //if (saveChangesError.GetValueOrDefault())
+            //{
+            //    ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator.";
+            //}
             Tren tren = db.Trenuri.Find(id);
             if (tren == null)
             {
@@ -124,6 +130,24 @@ namespace MersTrenuri.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Delete(int id)
+        //{
+        //    try
+        //    {
+        //        Student student = db.Students.Find(id);
+        //        db.Students.Remove(student);
+        //        db.SaveChanges();
+        //    }
+        //    catch (DataException/* dex */)
+        //    {
+        //        //Log the error (uncomment dex variable name and add a line here to write a log.
+        //        return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+        //    }
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {
