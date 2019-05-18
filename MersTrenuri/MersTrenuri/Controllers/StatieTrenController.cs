@@ -29,6 +29,7 @@ namespace MersTrenuri.Controllers
             //ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";    //ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
 
             //var statiiTren = from s in db.StatiiTren            //select s;
+
             var statiiTren = db.StatiiTren.Include(s => s.Gara).Include(s => s.Tren);
             IQueryable<StatieTren> empty = Enumerable.Empty<StatieTren>().AsQueryable();
             var statiiTren1 = empty;
@@ -81,10 +82,11 @@ namespace MersTrenuri.Controllers
                 //foreach (var i in statiiTren1)
                 //{
                 //    j = statiiTren2.Where(s => (s.TrenID == i.TrenID));     //IQueryable<StatieTren> j = statiiTren2.Where(s => (s.TrenID == i.TrenID));
+                
                 //    //var lempty = empty.ToList();  //var lj = j.ToList();
                 //    //if ( ! lt.Equals(lempty) )
                 //    //if (! j.Equals(empty))
-                //    if (j.Any())  //if ( j.Count() > 0 )
+                //    if (j.Any())  // if ( j.Count() > 0 )
                 //    {
                 //        StatieTren[] vi = { i };
                 //        rez = rez.Concat(vi).Concat(j);
