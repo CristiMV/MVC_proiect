@@ -41,10 +41,11 @@
                     </div>
                 </div>
                 <ul class="navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Tren", "", "Home", new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Login", "Login", "Home", new { @class = "nav-link btn btn-default d-none d-lg-block" })</li>
+
+                    <li class="mt-2">@Html.ActionLink("Tren", "Index", "Tren")</li>
+                    <li class="mt-2">@Html.ActionLink("Gari", "Index", "Gara")</li>
+                    <li class="mt-2">@Html.ActionLink("Statii tren", "Index", "StatieTren")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Home", new { @class = "btn btn-default d-none d-lg-block" })</li>
 
                 </ul>
             </div>
