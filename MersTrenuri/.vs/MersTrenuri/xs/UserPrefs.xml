@@ -4,7 +4,7 @@
       <File FileName="MersTrenuri/Views/Shared/_Layout.cshtml" Line="18" Column="43" />
       <File FileName="MersTrenuri/Controllers/HomeController.cs" Line="1" Column="1" />
       <File FileName="MersTrenuri/Controllers/TrenController.cs" Line="1" Column="1" />
-      <File FileName="MersTrenuri/Views/Tren/Index.cshtml" Line="1" Column="1" />
+      <File FileName="MersTrenuri/Views/Tren/Index.cshtml" Line="38" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
