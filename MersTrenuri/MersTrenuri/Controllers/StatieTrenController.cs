@@ -27,77 +27,46 @@ namespace MersTrenuri.Controllers
         public ViewResult Index(/*string sortOrder,*/ string searchString1, string searchString2)
         {
             //ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";    //ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-
-            //var statiiTren = from s in db.StatiiTren            //select s;
-
+            
             var statiiTren = db.StatiiTren.Include(s => s.Gara).Include(s => s.Tren);
             IQueryable<StatieTren> empty = Enumerable.Empty<StatieTren>().AsQueryable();
             var statiiTren1 = empty;
-            //var statiiTren2 = statiiTren;
-            var statiiTren2 = empty;
-            //var gari = from g in db.Gari //select g;
+            var statiiTren2 = empty;    //var statiiTren2 = statiiTren;
+            
             if (!String.IsNullOrEmpty(searchString1))
             {
-                //gari = gari.Where(g => g.Nume == searchString1);    
                 statiiTren1 = statiiTren.Where(s => s.Gara.Nume == searchString1 );
-                //statiiTren = db.StatiiTren.Include(s => gari.Contains(s.Gara)).Include(s => s.Tren); //statiiTren = db.StatiiTren.Include(s => s.Gara.ID == gari.First().ID).Include(s => s.Tren);
             }
 
             if (!String.IsNullOrEmpty(searchString2))
             {
                 statiiTren2 = statiiTren.Where(s => s.Gara.Nume == searchString2);
 
-                //var rez = statiiTren1.Join(statiiTren2.AsEnumerable(), st1 => st1.TrenID, st2 => st2.TrenID, (st1, st2) => new { st1, st2 });
-                //foreach (var obj in rez){ Console.WriteLine("{0} - {1}", obj.st1, obj.st2); }     //return View(rez.ToList());
-                //Console.WriteLine("Hello World!"); //Console.Write(statiiTren);
-
                 if (statiiTren1 == empty) { return View(statiiTren2.ToList()); }
-                
-                var rez = Enumerable.Empty<StatieTren>();           //var rez = Enumerable.Empty<StatieTren>().AsQueryable();
+
+                var rez = Enumerable.Empty<StatieTren>();
 
                 IQueryable<StatieTren> j = Enumerable.Empty<StatieTren>().AsQueryable();
                 int[] ids = new int[statiiTren1.Count()];   //va retine id-urile trenurilor care trec prin Gara 1
-                //DateTime[] oraP = new DateTime[statiiTren1.Count()];
-                DateTime[] oraS = new DateTime[statiiTren1.Count()];
+                int[] nrs = new int[ids.Length];
 
                 int i = 0;
                 foreach (var st in statiiTren1)
                 {
                     ids[i] = st.TrenID;
-                    //oraP[i++] = st.OraPlecare;
-                    oraS[i++] = st.OraSosire;
+                    nrs[i++] = st.NrSt;
                 }
 
                 i = 0;
                 foreach (var id in ids)
                 {
                     j = statiiTren2.Where(s => (s.TrenID == id));   
-                    //if (j.Any() && oraP[i++]<j.First().OraSosire)    //daca exista tren care trece prin Gara 2 cu id-ul trenului curent din Gara 1 si cu ora de sosire mai mare decat cea din Gara 1
-                    if ( j.Any() && oraS[i++]<j.First().OraSosire )
+                    if ( j.Any()  &&  nrs[i++] < j.First().NrSt )
                     {
                         rez = rez.Concat( statiiTren1.Where(s => (s.TrenID == id)) ).Concat(j);
                     }
                 }
 
-                //foreach (var i in statiiTren1)
-                //{
-                //    j = statiiTren2.Where(s => (s.TrenID == i.TrenID));     //IQueryable<StatieTren> j = statiiTren2.Where(s => (s.TrenID == i.TrenID));
-                
-                //    //var lempty = empty.ToList();  //var lj = j.ToList();
-                //    //if ( ! lt.Equals(lempty) )
-                //    //if (! j.Equals(empty))
-                //    if (j.Any())  // if ( j.Count() > 0 )
-                //    {
-                //        StatieTren[] vi = { i };
-                //        rez = rez.Concat(vi).Concat(j);
-                //    }
-                //    //foreach (var j in statiiTren2) {
-                //    //    if (i.TrenID == j.TrenID) {
-                //    //        StatieTren[] ij = { i, j }; rez = rez.Concat(ij);
-                //    //    }
-                //    //}
-                //}
-                //statiiTren = rez;
                 statiiTren = rez.AsQueryable();
             }
             else { statiiTren = statiiTren1; }

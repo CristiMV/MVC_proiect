@@ -1,0 +1,100 @@
+﻿@model IEnumerable<MersTrenuri.Models.StatieTren>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@*  *@
+@using (Html.BeginForm())
+{
+    <p>
+        Gara 1 : @Html.TextBox("SearchString1")
+    </p>
+    <p>
+        Gara 2 : @Html.TextBox("SearchString2")
+    </p>
+    <p>
+        <input type="submit" value="Search" />
+    </p>
+}
+
+@*  *@
+
+@if (Model.Any())
+{
+    if (Model.First().GaraID == Model.ElementAt(1).GaraID)  //a fost introdusa o singura gara
+    {
+        <table class="table">
+            <tr>
+                <th> Tren </th>
+                <th> @Html.DisplayNameFor(model => model.OraSosire) </th>
+                <th> @Html.DisplayNameFor(model => model.OraPlecare) </th>
+                @*<th></th>*@ @*pentru details*@
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem => item.Tren.Rang) @Html.DisplayFor(modelItem => item.TrenID)</td>
+                    @*<td> @Html.DisplayFor(modelItem => item.NrSt) </td>*@
+                    <td> @Html.DisplayFor(modelItem => item.OraSosire) </td>
+                    <td> @Html.DisplayFor(modelItem => item.OraPlecare) </td>
+                    @*<td> @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |</td>*@
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <table class="table">
+            <tr>
+                @*<th> @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm }) </th>*@
+                <th>
+                    @*@Html.ActionLink("Plecare", "Index", new { sortOrder = ViewBag.OraPlecareSortParm })*@
+                    Plecare
+                    @Html.DisplayFor(modelItem => Model.First().Gara.Nume)
+                </th>
+                @*<th></th>*@ @*pentru details*@
+
+                @*<th> @Html.DisplayNameFor(model => model.Tren.Rang) </th> <th> @Html.DisplayNameFor(model => model.Tren.ID) </th>*@
+                <th>Tren</th>
+                <th>
+                    Sosire
+                    @Html.DisplayFor(modelItem => Model.ElementAt(1).Gara.Nume)
+                </th>
+                @*<th></th>*@ @*pentru details*@
+            </tr>
+
+            @for (var i = 0; i < Model.Count();)
+            {
+                var item1 = Model.ElementAt(i++);
+                var item2 = Model.ElementAt(i++);
+
+                if (i % 2 == 0)
+                {
+                    <tr>
+                        <td> @Html.DisplayFor(modelItem => item1.OraPlecare) </td>
+                        @*<td> @Html.ActionLink("Details", "Details", new { id = item1.ID }) | </td>*@
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item1.Tren.Rang) @Html.DisplayFor(modelItem => item1.Tren.ID)
+                        </td>
+
+                        @*<td> @Html.DisplayFor(modelItem => item2.Gara.Nume) </td>*@
+                        @*<td> @Html.DisplayFor(modelItem => item2.Tren.Rang) </td> <td> @Html.DisplayFor(modelItem => item2.Tren.ID </td>*@
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item2.OraSosire)
+                        </td>
+                        @*<td> @Html.ActionLink("Details", "Details", new { id = item2.ID }) |</td>*@
+                    </tr>
+                }
+
+            }
+        </table>
+    }
+
+}

@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CautareController.cs" />
     <Compile Include="Controllers\GaraController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StatieTrenController.cs" />
@@ -194,6 +195,8 @@
     <Content Include="Views\StatieTren\Edit.cshtml" />
     <Content Include="Views\StatieTren\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Cautare\Details.cshtml" />
+    <Content Include="Views\Cautare\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
