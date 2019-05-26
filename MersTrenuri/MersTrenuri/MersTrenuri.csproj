@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CautareController.cs" />
     <Compile Include="Controllers\GaraController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -137,8 +138,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Gara.cs" />
+    <Compile Include="Models\OurDbContext.cs" />
     <Compile Include="Models\StatieTren.cs" />
     <Compile Include="Models\Tren.cs" />
+    <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +200,10 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Cautare\Details.cshtml" />
     <Content Include="Views\Cautare\Index.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\LoggedIn.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

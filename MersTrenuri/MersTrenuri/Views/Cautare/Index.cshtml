@@ -9,11 +9,19 @@
 @*  *@
 @using (Html.BeginForm())
 {
-    <p> Gara 1 : @Html.TextBox("SearchString1") </p>                                        @*<p> Gara 1 : @Html.TextBox("Gara1") </p>*@
-    <p> Gara 2 : @Html.TextBox("SearchString2") </p>                                        @*<p> Gara 2 : @Html.TextBox("Gara2") </p>*@
-    <p> <input type="submit" value="Cauta  trenuri" /> </p>                                 @*<p> <input type="submit" value="Search" /> </p>*@
+    <p>
+        Gara 1 : @Html.TextBox("SearchString1",null, new { @class= "form-control"})
+    </p>
+    <p>
+        Gara 2 : @Html.TextBox("SearchString2",null, new { @class= "form-control"})
+    </p>
+    <p>
+        @*<input type="submit" value="Search" class="btn btn-info" />*@
+        <input type="submit" value="Cauta  trenuri" class="btn btn-info"/>
+    </p>
 }
 
+@*  *@
 
 @if (Model.Any())
 {
