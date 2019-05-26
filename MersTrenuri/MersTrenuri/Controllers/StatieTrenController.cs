@@ -17,68 +17,78 @@ namespace MersTrenuri.Controllers
 
         // GET: StatieTren
 
-        //public ActionResult Index()
-        //{
+        //public ActionResult Index() //{
         //    var statiiTren = db.StatiiTren.Include(s => s.Gara).Include(s => s.Tren);
         //    return View(statiiTren.ToList());
         //}
 
-
-        public ViewResult Index(/*string sortOrder,*/ string searchString1, string searchString2)
+        public ViewResult Index(string sortOrder, string searchString1, string searchString2)
         {
-            //ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";    //ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-            
+            ////ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";    
+            //ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date;
+            //ViewBag.SortParm = sortOrder;
+
+            ViewBag.SearchString1Parm = searchString1;
+            ViewBag.SearchString2Parm = searchString2;
+
             var statiiTren = db.StatiiTren.Include(s => s.Gara).Include(s => s.Tren);
-            IQueryable<StatieTren> empty = Enumerable.Empty<StatieTren>().AsQueryable();
-            var statiiTren1 = empty;
-            var statiiTren2 = empty;    //var statiiTren2 = statiiTren;
-            
-            if (!String.IsNullOrEmpty(searchString1))
+
+            switch (sortOrder)
             {
-                statiiTren1 = statiiTren.Where(s => s.Gara.Nume == searchString1 );
+                case "OraPlecare": statiiTren = statiiTren.OrderBy(s => s.OraPlecare); break;
+                //case "Date": //statiiTren = statiiTren.OrderBy(s => s.EnrollmentDate;//        break;
+                case "OraSosire": statiiTren = statiiTren.OrderBy(s => s.OraSosire); break;
+                //default: statiiTren = statiiTren.OrderBy(s => s.OraPlecare); break;
             }
 
-            if (!String.IsNullOrEmpty(searchString2))
+            //IQueryable<StatieTren> empty = Enumerable.Empty<StatieTren>().AsQueryable();
+            //var statiiTren1 = empty;      //var statiiTren2 = empty;          //var statiiTren2 = statiiTren;
+
+
+            if (String.IsNullOrEmpty(searchString1))
             {
-                statiiTren2 = statiiTren.Where(s => s.Gara.Nume == searchString2);
-
-                if (statiiTren1 == empty) { return View(statiiTren2.ToList()); }
-
-                var rez = Enumerable.Empty<StatieTren>();
-
-                IQueryable<StatieTren> j = Enumerable.Empty<StatieTren>().AsQueryable();
-                int[] ids = new int[statiiTren1.Count()];   //va retine id-urile trenurilor care trec prin Gara 1
-                int[] nrs = new int[ids.Length];
-
-                int i = 0;
-                foreach (var st in statiiTren1)
+                if (String.IsNullOrEmpty(searchString2))
                 {
-                    ids[i] = st.TrenID;
-                    nrs[i++] = st.NrSt;
+                    return View(statiiTren.ToList());
                 }
-
-                i = 0;
-                foreach (var id in ids)
-                {
-                    j = statiiTren2.Where(s => (s.TrenID == id));   
-                    if ( j.Any()  &&  nrs[i++] < j.First().NrSt )
-                    {
-                        rez = rez.Concat( statiiTren1.Where(s => (s.TrenID == id)) ).Concat(j);
-                    }
-                }
-
-                statiiTren = rez.AsQueryable();
+                //else      //daca a avem doua gara
+                return View(statiiTren.Where(s => s.Gara.Nume == searchString2).ToList());
             }
-            else { statiiTren = statiiTren1; }
+            //else      //daca avem prima gara
+            if (String.IsNullOrEmpty(searchString2))    //daca nu avem a doua gara
+            {
+                return View(statiiTren.Where(s => s.Gara.Nume == searchString1).ToList());
+            }
+            //else      //daca avem ambele gari
+            var statiiTren1 = statiiTren.Where(s => s.Gara.Nume == searchString1);
+            var statiiTren2 = statiiTren.Where(s => s.Gara.Nume == searchString2);
 
-                //switch (sortOrder)//{
-                //    case "name_desc": //statiiTren = statiiTren.OrderByDescending(s => s.LastName;//        break;
-                //    case "Date": //statiiTren = statiiTren.OrderBy(s => s.EnrollmentDate;//        break;
-                //    case "date_desc": //statiiTren = statiiTren.OrderByDescending(s => s.EnrollmentDate);//        break;
-                //    default: //statiiTren = statiiTren.OrderBy(s => s.LastName);//        break;
-                //}
+            var rez = Enumerable.Empty<StatieTren>();
 
-                return View( statiiTren.ToList() );
+            IQueryable<StatieTren> j = Enumerable.Empty<StatieTren>().AsQueryable();
+            int[] ids = new int[statiiTren1.Count()];   //va retine id-urile trenurilor care trec prin Gara 1
+            int[] nrs = new int[ids.Length];
+
+            int i = 0;
+            foreach (var st in statiiTren1)
+            {
+                ids[i] = st.TrenID;
+                nrs[i++] = st.NrSt;
+            }
+
+            i = 0;
+            foreach (var id in ids)
+            {
+                j = statiiTren2.Where(s => (s.TrenID == id));
+                if (j.Any() && nrs[i++] < j.First().NrSt)
+                {
+                    rez = rez.Concat(statiiTren1.Where(s => (s.TrenID == id))).Concat(j);
+                }
+            }
+
+            statiiTren = rez.AsQueryable();
+
+            return View(statiiTren.ToList());
         }
 
 
@@ -116,12 +126,12 @@ namespace MersTrenuri.Controllers
         {
             //try
             //{
-                if (ModelState.IsValid)
-                {
-                    db.StatiiTren.Add(statieTren);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
+            if (ModelState.IsValid)
+            {
+                db.StatiiTren.Add(statieTren);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             //}
             //catch (DataException /* dex */)
             //{

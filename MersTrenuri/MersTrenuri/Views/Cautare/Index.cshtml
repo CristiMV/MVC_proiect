@@ -1,27 +1,19 @@
 ﻿@model IEnumerable<MersTrenuri.Models.StatieTren>
 
-@{
-    ViewBag.Title = "Index";
-}
+@{ ViewBag.Title = "Index"; }                                                               @*@{ ViewBag.Title = "Cautare"; }*@
 
-<h2>Index</h2>
+<h2>Cautare   trenuri</h2>                                                                  @*<h2>Index</h2>*@
+
 
 
 @*  *@
 @using (Html.BeginForm())
 {
-    <p>
-        Gara 1 : @Html.TextBox("SearchString1")
-    </p>
-    <p>
-        Gara 2 : @Html.TextBox("SearchString2")
-    </p>
-    <p>
-        <input type="submit" value="Search" />
-    </p>
+    <p> Gara 1 : @Html.TextBox("SearchString1") </p>                                        @*<p> Gara 1 : @Html.TextBox("Gara1") </p>*@
+    <p> Gara 2 : @Html.TextBox("SearchString2") </p>                                        @*<p> Gara 2 : @Html.TextBox("Gara2") </p>*@
+    <p> <input type="submit" value="Cauta  trenuri" /> </p>                                 @*<p> <input type="submit" value="Search" /> </p>*@
 }
 
-@*  *@
 
 @if (Model.Any())
 {
@@ -30,42 +22,42 @@
         <table class="table">
             <tr>
                 <th> Tren </th>
-                <th> @Html.DisplayNameFor(model => model.OraSosire) </th>
-                <th> @Html.DisplayNameFor(model => model.OraPlecare) </th>
-                @*<th></th>*@ @*pentru details*@
+                <th> Ora Sosire </th>                                                       @*<th> @Html.DisplayNameFor(model => model.OraSosire) </th>*@
+                <th> Ora Plecare </th>
             </tr>
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td> @Html.DisplayFor(modelItem => item.Tren.Rang) @Html.DisplayFor(modelItem => item.TrenID)</td>
-                    @*<td> @Html.DisplayFor(modelItem => item.NrSt) </td>*@
-                    <td> @Html.DisplayFor(modelItem => item.OraSosire) </td>
-                    <td> @Html.DisplayFor(modelItem => item.OraPlecare) </td>
-                    @*<td> @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |</td>*@
-                </tr>
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.Tren.Rang) @Html.DisplayFor(modelItem => item.TrenID)</td>  @*<td> @Html.DisplayFor(modelItem => item.NrSt) </td>*@
+                <td> @Html.DisplayFor(modelItem => item.OraSosire) </td>
+                <td> @Html.DisplayFor(modelItem => item.OraPlecare) </td>
+                @*<td> @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |</td>*@
+            </tr>
             }
         </table>
     }
-    else
+    else    //Doua gari
     {
         <table class="table">
             <tr>
-                @*<th> @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm }) </th>*@
+                                                                                            @*<th> @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm }) </th>*@
                 <th>
-                    @*@Html.ActionLink("Plecare", "Index", new { sortOrder = ViewBag.OraPlecareSortParm })*@
+                                                                                            @*@Html.ActionLink("Plecare", "Index", new { sortOrder = ViewBag.OraPlecareSortParm })*@
+                    @*@Html.ActionLink("Plecare", "Index", new { sortOrder = ViewBag.OraPlecareSortParm, searchString1 = ViewBag.SearchString1 })*@
+                    @*@Html.ActionLink("Plecare", "Index", new { sortOrder = ViewBag.OraPlecareSortParm, searchString1 = ViewBag.searchString1 })*@
                     Plecare
                     @Html.DisplayFor(modelItem => Model.First().Gara.Nume)
                 </th>
-                @*<th></th>*@ @*pentru details*@
+                                                                                            @*<th></th>*@ @*pentru details*@
 
-                @*<th> @Html.DisplayNameFor(model => model.Tren.Rang) </th> <th> @Html.DisplayNameFor(model => model.Tren.ID) </th>*@
-                <th>Tren</th>
+                <th>Tren</th>                                                               @*<th> @Html.DisplayNameFor(model => model.Tren.Rang) </th> <th> @Html.DisplayNameFor(model => model.Tren.ID) </th>*@
+
                 <th>
                     Sosire
                     @Html.DisplayFor(modelItem => Model.ElementAt(1).Gara.Nume)
                 </th>
-                @*<th></th>*@ @*pentru details*@
+                                                                                            @*<th></th>*@ @*pt details*@
             </tr>
 
             @for (var i = 0; i < Model.Count();)
@@ -86,10 +78,16 @@
                         @*<td> @Html.DisplayFor(modelItem => item2.Gara.Nume) </td>*@
                         @*<td> @Html.DisplayFor(modelItem => item2.Tren.Rang) </td> <td> @Html.DisplayFor(modelItem => item2.Tren.ID </td>*@
 
-                        <td>
-                            @Html.DisplayFor(modelItem => item2.OraSosire)
-                        </td>
-                        @*<td> @Html.ActionLink("Details", "Details", new { id = item2.ID }) |</td>*@
+                        @if (item1.OraSosire > item2.OraSosire)
+                        {
+                            <td> @Html.DisplayFor(modelItem => item2.OraSosire)    ( ziua urmatoare ) </td>
+                        }
+                        else
+                        {
+                            <td> @Html.DisplayFor(modelItem => item2.OraSosire) </td>
+                        }
+
+
                     </tr>
                 }
 

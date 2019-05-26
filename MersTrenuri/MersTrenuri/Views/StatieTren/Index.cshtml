@@ -4,115 +4,71 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Index  <!–– incercam un comentariu --> </h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<p> @Html.ActionLink("Create New", "Create") </p>
 
 @*  *@
 @using (Html.BeginForm())
 {
     <p>
-        Gara 1 : @Html.TextBox("SearchString1")
-        @*<input type="submit" value="Search" />*@
+        Gara 1 : @Html.TextBox("SearchString1")                                                                     @*<input type="submit" value="Search" />*@
     </p>
     <p>
-        Gara 2 : @Html.TextBox("SearchString2")
-        @*<input type="submit" value="Search" />*@
+        Gara 2 : @Html.TextBox("SearchString2")                                                                     @*<input type="submit" value="Search" />*@
     </p>
-    <p>
-        <input type="submit" value="Search" />
-    </p>
+    <p> <input type="submit" value="Search" /> </p>
 }
 
 @*  *@
-
 
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Gara.Nume)
         </th>
+        <th> @Html.DisplayNameFor(model => model.Tren.Rang) </th>
+        <th> @Html.DisplayNameFor(model => model.Tren.ID) </th>
+        @*<th> @Html.DisplayNameFor(model => model.NrSt) </th>*@
+        @*<th> @Html.DisplayNameFor(model => model.OraSosire) </th>@**@
         <th>
-            @Html.DisplayNameFor(model => model.Tren.Rang)
+            @Html.ActionLink("OraSosire", "Index", new { sortOrder = "OraSosire",
+                searchString1 = ViewBag.SearchString1Parm, searchString2 = ViewBag.SearchString2Parm })
         </th>
+
         <th>
-            @Html.DisplayNameFor(model => model.Tren.ID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OraPlecare)
+            @Html.ActionLink("OraPlecare", "Index", new { sortOrder = "OraPlecare",
+                searchString1 = ViewBag.SearchString1Parm, searchString2 = ViewBag.SearchString2Parm })
         </th>
         <th></th>
-
+        <!–– @*
         <th>
             @Html.DisplayNameFor(model => model.Gara.Nume)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tren.Rang)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tren.ID)
-        </th>
+        <th> @Html.DisplayNameFor(model => model.Tren.Rang) </th>
+        <th> @Html.DisplayNameFor(model => model.Tren.ID) </th>
         <th>
             @Html.DisplayNameFor(model => model.OraSosire)
         </th>
         <th></th>
+        *@ -->
     </tr>
 
-
-    @for (var i = 0; i < Model.Count();)
+    @foreach (var item in Model)
     {
-
-        var item1 = Model.ElementAt(i++);
-        var item2 = Model.ElementAt(i++);
-
-        if (i % 2 == 0)
-        {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item1.Gara.Nume)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item1.Tren.Rang)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item1.Tren.ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item1.OraPlecare)
-        </td>
-
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item1.ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item1.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item1.ID })
-        </td>
-
-
-        <td>
-            @Html.DisplayFor(modelItem => item2.Gara.Nume)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item2.Tren.Rang)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item2.Tren.ID)
-        </td>
-
-        <td>
-            @Html.DisplayFor(modelItem => item2.OraSosire)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item1.ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item1.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item1.ID })
-        </td>
-    </tr>
-        }
-
+        <tr>
+            <td> @Html.DisplayFor(modelItem => item.Gara.Nume) </td>
+            <td> @Html.DisplayFor(modelItem => item.Tren.Rang) </td>
+            <td> @Html.DisplayFor(modelItem => item.TrenID) </td>
+            @*<td> @Html.DisplayFor(modelItem => item.NrSt) </td>*@
+            <td> @Html.DisplayFor(modelItem => item.OraSosire) </td>
+            <td> @Html.DisplayFor(modelItem => item.OraPlecare) </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
     }
-
-
 
 </table>

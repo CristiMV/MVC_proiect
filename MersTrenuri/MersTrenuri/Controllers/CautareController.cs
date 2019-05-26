@@ -30,9 +30,9 @@ namespace MersTrenuri.Controllers
 
             var statiiTren = db.StatiiTren.Include(s => s.Gara).Include(s => s.Tren);
             IQueryable<StatieTren> empty = Enumerable.Empty<StatieTren>().AsQueryable();
-            var statiiTren1 = empty; var statiiTren2 = empty;    //var statiiTren2 = statiiTren;
+            var statiiTren1 = empty;    var statiiTren2 = empty;       //var statiiTren2 = statiiTren;
 
-            if (!String.IsNullOrEmpty(searchString1))
+            if ( ! String.IsNullOrEmpty(searchString1))
             {
                 statiiTren1 = statiiTren.Where(s => s.Gara.Nume == searchString1);
                 //statiiTren1 = statiiTren1.OrderBy(s => s.OraPlecare);
@@ -40,13 +40,11 @@ namespace MersTrenuri.Controllers
                 if (String.IsNullOrEmpty(searchString2)) { return View(statiiTren1.OrderBy(s => s.OraSosire).ToList()); }
 
                 statiiTren1 = statiiTren1.OrderBy(s => s.OraPlecare);
-                //switch (sortOrder)
-                //{
+
+                //switch (sortOrder) //{
                 //    case "oraPlecare_desc":
                 //        statiiTren1 = statiiTren1.OrderByDescending(s => s.OraPlecare);
                 //        break;
-                //    //case "Date": //statiiTren = statiiTren.OrderBy(s => s.EnrollmentDate;//        break;
-                //    //case "date_desc": //statiiTren = statiiTren.OrderByDescending(s => s.EnrollmentDate);//        break;
                 //    case "OraPlecare":
                 //        statiiTren1 = statiiTren1.OrderBy(s => s.OraPlecare);
                 //        break;
@@ -56,7 +54,7 @@ namespace MersTrenuri.Controllers
                 //}
             }
 
-            if (!String.IsNullOrEmpty(searchString2))
+            if ( ! String.IsNullOrEmpty(searchString2))
             {
                 statiiTren2 = statiiTren.Where(s => s.Gara.Nume == searchString2);
 
