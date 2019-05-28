@@ -62,23 +62,22 @@ namespace MersTrenuri.DAL
 
                 //Tren 1 dus :
 
-                new StatieTren{ TrenID = 1001, GaraID =2006,NrSt=1, OraSosire= DateTime.Parse("08:00"), OraPlecare=DateTime.Parse("08:05")},   //Arad
-                new StatieTren{ TrenID = 1001, GaraID =2001,NrSt=2, OraSosire= DateTime.Parse("09:00"), OraPlecare=DateTime.Parse("09:05")},   //Timisoara
-                new StatieTren{ TrenID = 1001, GaraID =2002,NrSt=3, OraSosire= DateTime.Parse("11:00"), OraPlecare=DateTime.Parse("11:05")},   //Craiova
-                new StatieTren{ TrenID = 1001, GaraID =2003,NrSt=4, OraSosire= DateTime.Parse("13:00"), OraPlecare=DateTime.Parse("13:05")},   //Pitesti
-                new StatieTren{ TrenID = 1001, GaraID =2004,NrSt=5, OraSosire= DateTime.Parse("15:00"), OraPlecare=DateTime.Parse("15:05")},   //Bucuresti
-                new StatieTren{ TrenID = 1001, GaraID =2005,NrSt=6, OraSosire= DateTime.Parse("21:00"), OraPlecare=DateTime.Parse("21:05")},   //Constanta
+                new StatieTren{ TrenID = 1001, GaraID =2006, NrSt=1, OraSosire= DateTime.Parse("08:00"), OraPlecare=DateTime.Parse("08:05")},   //Arad
+                new StatieTren{ TrenID = 1001, GaraID =2001, NrSt=2, OraSosire= DateTime.Parse("09:00"), OraPlecare=DateTime.Parse("09:05")},   //Timisoara
+                new StatieTren{ TrenID = 1001, GaraID =2002, NrSt=3, OraSosire= DateTime.Parse("11:00"), OraPlecare=DateTime.Parse("11:05")},   //Craiova
+                new StatieTren{ TrenID = 1001, GaraID =2003, NrSt=4, OraSosire= DateTime.Parse("13:00"), OraPlecare=DateTime.Parse("13:05")},   //Pitesti
+                new StatieTren{ TrenID = 1001, GaraID =2004, NrSt=5, OraSosire= DateTime.Parse("15:00"), OraPlecare=DateTime.Parse("15:05")},   //Bucuresti
+                new StatieTren{ TrenID = 1001, GaraID =2005, NrSt=6, OraSosire= DateTime.Parse("21:00"), OraPlecare=DateTime.Parse("21:05")},   //Constanta
 
 
                 //Tren 1 intors :
 
-
-                new StatieTren{ TrenID = 1002, GaraID =2006,NrSt=6, OraSosire= DateTime.Parse("11:00"), OraPlecare= DateTime.Parse("08:00")},  //Arad
-                new StatieTren{ TrenID = 1002, GaraID =2001,NrSt=5, OraSosire= DateTime.Parse("10:00"), OraPlecare= DateTime.Parse("10:05")},  //Timisoara
-                new StatieTren{ TrenID = 1002, GaraID =2002,NrSt=4, OraSosire= DateTime.Parse("08:00"), OraPlecare= DateTime.Parse("08:05")},  //Craiova
-                new StatieTren{ TrenID = 1002, GaraID =2003,NrSt=3, OraSosire= DateTime.Parse("06:00"), OraPlecare= DateTime.Parse("06:05")},  //Pitesti
-                new StatieTren{ TrenID = 1002, GaraID =2004,NrSt=2, OraSosire= DateTime.Parse("04:00"), OraPlecare= DateTime.Parse("04:05")},  //Bucuresti
-                new StatieTren{ TrenID = 1002, GaraID =2005,NrSt=1, OraSosire= DateTime.Parse("22:00"), OraPlecare= DateTime.Parse("22:05")},  //Constanta
+                new StatieTren{ TrenID = 1002, GaraID =2006, NrSt=6, OraSosire= DateTime.Parse("11:00"), OraPlecare= DateTime.Parse("08:00")},  //Arad
+                new StatieTren{ TrenID = 1002, GaraID =2001, NrSt=5, OraSosire= DateTime.Parse("10:00"), OraPlecare= DateTime.Parse("10:05")},  //Timisoara
+                new StatieTren{ TrenID = 1002, GaraID =2002, NrSt=4, OraSosire= DateTime.Parse("08:00"), OraPlecare= DateTime.Parse("08:05")},  //Craiova
+                new StatieTren{ TrenID = 1002, GaraID =2003, NrSt=3, OraSosire= DateTime.Parse("06:00"), OraPlecare= DateTime.Parse("06:05")},  //Pitesti
+                new StatieTren{ TrenID = 1002, GaraID =2004, NrSt=2, OraSosire= DateTime.Parse("04:00"), OraPlecare= DateTime.Parse("04:05")},  //Bucuresti
+                new StatieTren{ TrenID = 1002, GaraID =2005, NrSt=1, OraSosire= DateTime.Parse("22:00"), OraPlecare= DateTime.Parse("22:05")},  //Constanta
 
 
                 //Tren 2 dus :
@@ -178,32 +177,30 @@ namespace MersTrenuri.DAL
 
                 //Tren 7 dus :
 
-
-                new StatieTren{ TrenID = 1061, GaraID =2006,NrSt=1, OraSosire= DateTime.Parse("00:00"), OraPlecare= DateTime.Parse("00:05")},   //Arad
-                new StatieTren{ TrenID = 1061, GaraID =2013,NrSt=2, OraSosire= DateTime.Parse("03:00"), OraPlecare= DateTime.Parse("03:05")},
-                new StatieTren{ TrenID = 1061, GaraID =2010,NrSt=3, OraSosire= DateTime.Parse("05:00"), OraPlecare= DateTime.Parse("05:05")},   //Cluj-Napoca
-                new StatieTren{ TrenID = 1061, GaraID =2011,NrSt=4, OraSosire= DateTime.Parse("07:00"), OraPlecare= DateTime.Parse("07:05")},   //Targu Mures
-                new StatieTren{ TrenID = 1061, GaraID =2008,NrSt=5, OraSosire= DateTime.Parse("09:00"), OraPlecare= DateTime.Parse("09:05")},
-                new StatieTren{ TrenID = 1061, GaraID =2004,NrSt=6, OraSosire= DateTime.Parse("11:00"), OraPlecare= DateTime.Parse("11:05")},   //Bucuresti
-                new StatieTren{ TrenID = 1061, GaraID =2009,NrSt=7, OraSosire= DateTime.Parse("13:00"), OraPlecare= DateTime.Parse("13:05")},
-                new StatieTren{ TrenID = 1061, GaraID =2012,NrSt=8, OraSosire= DateTime.Parse("15:00"), OraPlecare= DateTime.Parse("15:05")},
-                new StatieTren{ TrenID = 1061, GaraID =2014,NrSt=9, OraSosire= DateTime.Parse("17:00"), OraPlecare= DateTime.Parse("17:05")},   //Iasi
-                new StatieTren{ TrenID = 1061, GaraID =2005,NrSt=10, OraSosire= DateTime.Parse("19:00"), OraPlecare= DateTime.Parse("19:05")},  //Constanta
+                new StatieTren{ TrenID = 1061, GaraID =2006, NrSt=1, OraSosire= DateTime.Parse("00:00"), OraPlecare= DateTime.Parse("00:05")},   //Arad
+                new StatieTren{ TrenID = 1061, GaraID =2013, NrSt=2, OraSosire= DateTime.Parse("03:00"), OraPlecare= DateTime.Parse("03:05")},
+                new StatieTren{ TrenID = 1061, GaraID =2010, NrSt=3, OraSosire= DateTime.Parse("05:00"), OraPlecare= DateTime.Parse("05:05")},   //Cluj-Napoca
+                new StatieTren{ TrenID = 1061, GaraID =2011, NrSt=4, OraSosire= DateTime.Parse("07:00"), OraPlecare= DateTime.Parse("07:05")},   //Targu Mures
+                new StatieTren{ TrenID = 1061, GaraID =2008, NrSt=5, OraSosire= DateTime.Parse("09:00"), OraPlecare= DateTime.Parse("09:05")},
+                new StatieTren{ TrenID = 1061, GaraID =2004, NrSt=6, OraSosire= DateTime.Parse("11:00"), OraPlecare= DateTime.Parse("11:05")},   //Bucuresti
+                new StatieTren{ TrenID = 1061, GaraID =2009, NrSt=7, OraSosire= DateTime.Parse("13:00"), OraPlecare= DateTime.Parse("13:05")},
+                new StatieTren{ TrenID = 1061, GaraID =2012, NrSt=8, OraSosire= DateTime.Parse("15:00"), OraPlecare= DateTime.Parse("15:05")},
+                new StatieTren{ TrenID = 1061, GaraID =2014, NrSt=9, OraSosire= DateTime.Parse("17:00"), OraPlecare= DateTime.Parse("17:05")},   //Iasi
+                new StatieTren{ TrenID = 1061, GaraID =2005, NrSt=10, OraSosire= DateTime.Parse("19:00"), OraPlecare= DateTime.Parse("19:05")},  //Constanta
 
 
                 //Tren 7 intors :
 
-
-                new StatieTren{ TrenID = 1062, GaraID =2006,NrSt=10, OraSosire= DateTime.Parse("15:00"), OraPlecare= DateTime.Parse("00:00")},  //Arad
-                new StatieTren{ TrenID = 1062, GaraID =2013,NrSt=9, OraSosire= DateTime.Parse("12:00"), OraPlecare= DateTime.Parse("12:05")},
-                new StatieTren{ TrenID = 1062, GaraID =2010,NrSt=8, OraSosire= DateTime.Parse("10:00"), OraPlecare= DateTime.Parse("10:05")},   //Cluj-Napoca
-                new StatieTren{ TrenID = 1062, GaraID =2011,NrSt=7, OraSosire= DateTime.Parse("08:00"), OraPlecare= DateTime.Parse("08:05")},   //Targu Mures
-                new StatieTren{ TrenID = 1062, GaraID =2008,NrSt=6, OraSosire= DateTime.Parse("06:00"), OraPlecare= DateTime.Parse("06:05")},
-                new StatieTren{ TrenID = 1062, GaraID =2004,NrSt=5, OraSosire= DateTime.Parse("04:00"), OraPlecare= DateTime.Parse("04:05")},   //Bucuresti
-                new StatieTren{ TrenID = 1062, GaraID =2009,NrSt=4, OraSosire= DateTime.Parse("02:00"), OraPlecare= DateTime.Parse("02:05")},
-                new StatieTren{ TrenID = 1062, GaraID =2012,NrSt=3, OraSosire= DateTime.Parse("00:00"), OraPlecare= DateTime.Parse("00:05")},
-                new StatieTren{ TrenID = 1062, GaraID =2014,NrSt=2, OraSosire= DateTime.Parse("22:00"), OraPlecare= DateTime.Parse("22:05")},   //Iasi
-                new StatieTren{ TrenID = 1062, GaraID =2005,NrSt=1, OraSosire= DateTime.Parse("20:00"), OraPlecare= DateTime.Parse("20:05")},   //Constanta
+                new StatieTren{ TrenID = 1062, GaraID =2006, NrSt=10, OraSosire= DateTime.Parse("15:00"), OraPlecare= DateTime.Parse("00:00")},  //Arad
+                new StatieTren{ TrenID = 1062, GaraID =2013, NrSt=9, OraSosire= DateTime.Parse("12:00"), OraPlecare= DateTime.Parse("12:05")},
+                new StatieTren{ TrenID = 1062, GaraID =2010, NrSt=8, OraSosire= DateTime.Parse("10:00"), OraPlecare= DateTime.Parse("10:05")},   //Cluj-Napoca
+                new StatieTren{ TrenID = 1062, GaraID =2011, NrSt=7, OraSosire= DateTime.Parse("08:00"), OraPlecare= DateTime.Parse("08:05")},   //Targu Mures
+                new StatieTren{ TrenID = 1062, GaraID =2008, NrSt=6, OraSosire= DateTime.Parse("06:00"), OraPlecare= DateTime.Parse("06:05")},
+                new StatieTren{ TrenID = 1062, GaraID =2004, NrSt=5, OraSosire= DateTime.Parse("04:00"), OraPlecare= DateTime.Parse("04:05")},   //Bucuresti
+                new StatieTren{ TrenID = 1062, GaraID =2009, NrSt=4, OraSosire= DateTime.Parse("02:00"), OraPlecare= DateTime.Parse("02:05")},
+                new StatieTren{ TrenID = 1062, GaraID =2012, NrSt=3, OraSosire= DateTime.Parse("00:00"), OraPlecare= DateTime.Parse("00:05")},
+                new StatieTren{ TrenID = 1062, GaraID =2014, NrSt=2, OraSosire= DateTime.Parse("22:00"), OraPlecare= DateTime.Parse("22:05")},   //Iasi
+                new StatieTren{ TrenID = 1062, GaraID =2005, NrSt=1, OraSosire= DateTime.Parse("20:00"), OraPlecare= DateTime.Parse("20:05")},   //Constanta
 
                 //new StatieTren{ TrenID = 1, GaraID = 1, OraSosire= DateTime.Parse("7:50"), OraPlecare= DateTime.Parse("8:00") },
                 //new StatieTren{ TrenID = 2, GaraID = 2, OraSosire= DateTime.Parse("8:50"), OraPlecare= DateTime.Parse("9:00") },

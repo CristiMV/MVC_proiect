@@ -236,7 +236,6 @@ C:\Users\User\Documents\GitHub\MVC_proiect\MersTrenuri\MersTrenuri\obj\Debug\Mer
 C:\Users\User\Documents\GitHub\MVC_proiect\MersTrenuri\MersTrenuri\obj\Debug\MersTrenuri.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\MVC_proiect\MersTrenuri\MersTrenuri\obj\Debug\MersTrenuri.dll
 C:\Users\User\Documents\GitHub\MVC_proiect\MersTrenuri\MersTrenuri\obj\Debug\MersTrenuri.pdb
-C:\Users\User\Documents\GitHub\MVC_proiect\MersTrenuri\MersTrenuri\obj\Debug\MersTrenuri.csprojAssemblyReference.cache
 D:\developer\MVC_proiect\MersTrenuri\MersTrenuri\bin\MersTrenuri.dll.config
 D:\developer\MVC_proiect\MersTrenuri\MersTrenuri\bin\MersTrenuri.dll
 D:\developer\MVC_proiect\MersTrenuri\MersTrenuri\bin\MersTrenuri.pdb
@@ -317,3 +316,4 @@ D:\developer\MVC_proiect\MersTrenuri\MersTrenuri\obj\Debug\MersTrenuri.csproj.Co
 D:\developer\MVC_proiect\MersTrenuri\MersTrenuri\obj\Debug\MersTrenuri.csproj.CopyComplete
 D:\developer\MVC_proiect\MersTrenuri\MersTrenuri\obj\Debug\MersTrenuri.dll
 D:\developer\MVC_proiect\MersTrenuri\MersTrenuri\obj\Debug\MersTrenuri.pdb
+C:\Users\User\Documents\GitHub\MVC_proiect\MersTrenuri\MersTrenuri\obj\Debug\MersTrenuri.csprojAssemblyReference.cache

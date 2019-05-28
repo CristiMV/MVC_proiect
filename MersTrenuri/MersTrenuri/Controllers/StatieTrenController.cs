@@ -24,8 +24,7 @@ namespace MersTrenuri.Controllers
 
         public ViewResult Index(string sortOrder, string searchString1, string searchString2)
         {
-            ////ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";    
-            //ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date;
+            ////ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             //ViewBag.SortParm = sortOrder;
 
             ViewBag.SearchString1Parm = searchString1;
@@ -36,36 +35,35 @@ namespace MersTrenuri.Controllers
             switch (sortOrder)
             {
                 case "OraPlecare": statiiTren = statiiTren.OrderBy(s => s.OraPlecare); break;
-                //case "Date": //statiiTren = statiiTren.OrderBy(s => s.EnrollmentDate;//        break;
                 case "OraSosire": statiiTren = statiiTren.OrderBy(s => s.OraSosire); break;
-                //default: statiiTren = statiiTren.OrderBy(s => s.OraPlecare); break;
+                    //default: statiiTren = statiiTren.OrderBy(s => s.OraPlecare); break;
             }
 
-            //IQueryable<StatieTren> empty = Enumerable.Empty<StatieTren>().AsQueryable();
-            //var statiiTren1 = empty;      //var statiiTren2 = empty;          //var statiiTren2 = statiiTren;
+            //IQueryable<StatieTren> empty = Enumerable.Empty<StatieTren>() .AsQueryable();
+            //var emptyIE = Enumerable.Empty<StatieTren>();
 
 
             if (String.IsNullOrEmpty(searchString1))
             {
-                if (String.IsNullOrEmpty(searchString2))
+                if (String.IsNullOrEmpty(searchString2))    //NICIO gara introdusa
                 {
                     return View(statiiTren.ToList());
                 }
-                //else      //daca a avem doua gara
+                //else      //daca avem GARA 2
                 return View(statiiTren.Where(s => s.Gara.Nume == searchString2).ToList());
             }
-            //else      //daca avem prima gara
-            if (String.IsNullOrEmpty(searchString2))    //daca nu avem a doua gara
-            {
-                return View(statiiTren.Where(s => s.Gara.Nume == searchString1).ToList());
-            }
-            //else      //daca avem ambele gari
+
+            //else          //avem PRIMA GARA
             var statiiTren1 = statiiTren.Where(s => s.Gara.Nume == searchString1);
+
+            if (String.IsNullOrEmpty(searchString2))    //daca NU avem gara 2
+            {
+                return View(statiiTren1.ToList());
+            }
+
+            //else          //avem AMBELE gari            
             var statiiTren2 = statiiTren.Where(s => s.Gara.Nume == searchString2);
 
-            var rez = Enumerable.Empty<StatieTren>();
-
-            IQueryable<StatieTren> j = Enumerable.Empty<StatieTren>().AsQueryable();
             int[] ids = new int[statiiTren1.Count()];   //va retine id-urile trenurilor care trec prin Gara 1
             int[] nrs = new int[ids.Length];
 
@@ -76,14 +74,17 @@ namespace MersTrenuri.Controllers
                 nrs[i++] = st.NrSt;
             }
 
+            var rez = Enumerable.Empty<StatieTren>();
+            IQueryable<StatieTren> j = Enumerable.Empty<StatieTren>().AsQueryable();
             i = 0;
             foreach (var id in ids)
             {
                 j = statiiTren2.Where(s => (s.TrenID == id));
-                if (j.Any() && nrs[i++] < j.First().NrSt)
+                if (j.Any() && nrs[i] < j.First().NrSt)
                 {
                     rez = rez.Concat(statiiTren1.Where(s => (s.TrenID == id))).Concat(j);
                 }
+                ++i;
             }
 
             statiiTren = rez.AsQueryable();

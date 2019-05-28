@@ -22,15 +22,14 @@
 
 @*  *@
 
+
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Gara.Nume)
-        </th>
+        <th> @Html.DisplayNameFor(model => model.Gara.Nume) </th>
+
         <th> @Html.DisplayNameFor(model => model.Tren.Rang) </th>
-        <th> @Html.DisplayNameFor(model => model.Tren.ID) </th>
+        <th> @Html.DisplayNameFor(model => model.TrenID) </th>
         @*<th> @Html.DisplayNameFor(model => model.NrSt) </th>*@
-        @*<th> @Html.DisplayNameFor(model => model.OraSosire) </th>@**@
         <th>
             @Html.ActionLink("OraSosire", "Index", new { sortOrder = "OraSosire",
                 searchString1 = ViewBag.SearchString1Parm, searchString2 = ViewBag.SearchString2Parm })
