@@ -9,6 +9,8 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@**@ @*Add Column Heading Hyperlinks to the Student Index View pg 58-59*@
 <table class="table">
     <tr>
         <th>
@@ -20,20 +22,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rang)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID },
+         new { @class = "btn btn-sm" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID },
+         new { @class = "btn btn-info btn-sm" })  |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID },
+         new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+    }
 
 </table>

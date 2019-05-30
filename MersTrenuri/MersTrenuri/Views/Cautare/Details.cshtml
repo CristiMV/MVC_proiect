@@ -1,0 +1,58 @@
+﻿@model MersTrenuri.Models.StatieTren
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StatieTren</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Gara.Nume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gara.Nume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tren.Rang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tren.Rang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NrSt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NrSt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OraSosire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OraSosire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OraPlecare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OraPlecare)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

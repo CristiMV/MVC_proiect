@@ -1,0 +1,115 @@
+﻿@model IEnumerable<MersTrenuri.Models.StatieTren>
+
+@{ ViewBag.Title = "Index"; }                                                               @*@{ ViewBag.Title = "Cautare"; }*@
+
+<h2>Cautare   trenuri</h2>                                                                  @*<h2>Index</h2>*@
+
+
+
+@*  *@
+@using (Html.BeginForm())
+{
+    <p>
+        Gara 1 : @Html.TextBox("SearchString1", null, new { @class = "form-control" })
+    </p>
+    <p>
+        Gara 2 : @Html.TextBox("SearchString2", null, new { @class = "form-control" })
+    </p>
+    <p>
+        @*<input type="submit" value="Search" class="btn btn-info" />*@
+        <input type="submit" value="Cauta  trenuri" class="btn btn-info" />
+    </p>
+}
+@*  *@
+
+
+@if (Model.Any())
+{
+    if (Model.First().GaraID == Model.ElementAt(1).GaraID)  //a fost introdusa O SINGURA GARA
+    {
+        <table class="table">
+            <tr>
+                <th> Tren </th>
+                @*<th> Ora Sosire </th>                                                       @*<th> @Html.DisplayNameFor(model => model.OraSosire) </th>*@
+                <th>
+                    @Html.ActionLink("Ora Sosire", "Index", new { sortOrder = "OraSosire",
+                        searchString1 = ViewBag.SearchString1Parm,  searchString2 = ViewBag.SearchString2Parm   } )
+                </th>
+                @*<th> Ora Plecare </th>*@
+                <th>
+                    @Html.ActionLink("Ora Plecare", "Index", new { sortOrder = "OraPlecare",
+                        searchString1 = ViewBag.SearchString1Parm,  searchString2 = ViewBag.SearchString2Parm   } )
+                </th>
+                <th> Rezerva </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.Tren.Rang) @Html.DisplayFor(modelItem => item.TrenID)</td>
+                <td> @Html.DisplayFor(modelItem => item.OraSosire) </td>
+                <td> @Html.DisplayFor(modelItem => item.OraPlecare) </td>
+                <td> rezerva </td>
+                @*<td> @Html.ActionLink("Details", "Details", new { id = item.ID }) |</td>*@
+            </tr>
+            }
+        </table>
+    }
+    else            //AMBELE gari
+    {
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.ActionLink("Ora Plecare", "Index", new { sortOrder = "OraPlecare",
+                        searchString1 = ViewBag.SearchString1Parm,  searchString2 = ViewBag.SearchString2Parm   } )
+                    @Html.DisplayFor(modelItem => Model.First().Gara.Nume)
+                </th>
+                @*<th></th>*@ @*pentru details*@
+
+                <th>Tren</th>                                                               @*<th> @Html.DisplayNameFor(model => model.Tren.Rang) </th> <th> @Html.DisplayNameFor(model => model.Tren.ID) </th>*@
+
+                <th>
+                    @*Sosire*@
+                    @Html.ActionLink("Ora Sosire", "Index", new { sortOrder = "OraSosire",
+                        searchString1 = ViewBag.SearchString1Parm,  searchString2 = ViewBag.SearchString2Parm   } )
+                    @Html.DisplayFor(modelItem => Model.ElementAt(1).Gara.Nume)
+                </th>
+                @*<th></th>*@ @*pt details*@
+            </tr>
+
+            @for (var i = 0; i < Model.Count();)
+            {
+                var item1 = Model.ElementAt(i++);
+                var item2 = Model.ElementAt(i++);
+
+                if (i % 2 == 0)
+                {
+                    <tr>
+                        <td> @Html.DisplayFor(modelItem => item1.OraPlecare) </td>
+                        @*<td> @Html.ActionLink("Details", "Details", new { id = item1.ID }) | </td>*@
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item1.Tren.Rang) @Html.DisplayFor(modelItem => item1.Tren.ID)
+                        </td>
+
+                        @*<td> @Html.DisplayFor(modelItem => item2.Gara.Nume) </td>*@
+                        @*<td> @Html.DisplayFor(modelItem => item2.Tren.Rang) </td> <td> @Html.DisplayFor(modelItem => item2.Tren.ID </td>*@
+
+                        @if (item1.OraSosire > item2.OraSosire)
+                        {
+                            <td> @Html.DisplayFor(modelItem => item2.OraSosire)    ( ziua urmatoare ) </td>
+                        }
+                        else
+                        {
+                            <td> @Html.DisplayFor(modelItem => item2.OraSosire) </td>
+                        }
+
+
+                    </tr>
+                }
+
+            }
+        </table>
+    }
+
+}

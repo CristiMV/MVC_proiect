@@ -9,6 +9,7 @@
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
+
 </head>
 <body>
 
@@ -40,10 +41,12 @@
                     </div>
                 </div>
                 <ul class="navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Login", "Login", "Home", new { @class = "nav-link btn btn-default d-none d-lg-block" })</li>
+
+                    <li class="mt-2">@Html.ActionLink("Trenuri", "Index", "Tren")</li>
+                    <li class="mt-2">@Html.ActionLink("Gari", "Index", "Gara")</li>
+                    @*<li class="mt-2">@Html.ActionLink("Statii tren", "Index", "StatieTren")</li>*@
+                    <li class="mt-2">@Html.ActionLink("Cautare", "Index", "Cautare")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Account", new { @class = "btn btn-default d-none d-lg-block" })</li>
 
                 </ul>
             </div>
