@@ -14,9 +14,3 @@ namespace MersTrenuri.DAL
     }
 }
 
-/*
-using ContosoUniversity.Models;
-using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
-*/
-
